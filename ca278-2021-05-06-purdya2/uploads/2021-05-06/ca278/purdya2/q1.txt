@@ -1,0 +1,124 @@
+Q1(a)
+#!/usr/bin/env python
+
+number = input("Enter a number: ")
+
+if number >= 1 and number < 10:
+   print "1 <= number < 10"
+elif number >= 10 and number < 20:
+   print "10 <= number < 20"
+elif number >= 20:
+   print "number >= 20"
+
+
+
+Q1(b)
+The code does not terminate when -1 is entered.
+
+There should be another input prompt (number = input('Enter a number:')) after each input that's not -1.
+
+i = 0 and i = i + 1 is not needed.
+
+The code should be:
+number = input('Enter number:') 
+total = 0
+while number != -1:
+   number = input('Enter number:')
+   total += number
+   print 'Average', float(total)/number
+
+
+Q1(c)
+The ':' notation in python is used to slice a list. 
+
+ls[4:]
+ls[4:6]
+ls[-2:]
+
+
+
+Q1(d)
+A class variable is all the variables which are assigned to a value in a class definition.
+An attribute is a variable which belongs to a class or an object. It can be described as a characteristic of an object.
+You might use a class variable when you need to use many functions. This can be to avoid repetition.
+
+
+Q1(e)
+To call the functions you could use:
+calc_bmi(66, 1.8)
+calc_bmi(weight = 66, height = 1.8)
+
+calc_bmi(160, 72)
+
+
+An optional parameter is a method which is called without passing arguments. It has a default value therefore if the optional argument is not passes when called, the default value is used.
+It is useful to have in the calc_bmi function as it provides a default value for the units of measurements.
+
+
+Q1(f)
+The __str__ method needs to be used to print what is required.
+The code should be as follows:
+class Person:
+   def __init__(self,n,a):
+      self.name = n
+      self.age = a
+
+   def __str__(self):
+      return str(self.name) + " (" + str(self.age) + ")"
+if __name__ == '__main__':
+   man = Person('John',50)
+   print man
+
+
+
+Q1(g)
+Value returned: 
+def frequency(letter_counts):
+   '''returns the frequency of the letters. '''
+   num = 0
+   freq = ''   # assign f to the empty string
+   for l in letter_counts:
+      if letter_counts[l] > num: 
+         num = letter_counts[l]
+         freq = l
+   return freq
+
+
+Q1(h)
+This is happening because its a never ending loop.
+
+Can be fixed by 
+
+
+Q1(i)
+def every_second_line(inputFilename):
+   with open (inputFilename, "r") as f:
+      lines = f.readlines()
+	  count = 0
+	  for line in lines:
+	     count = count + 1
+	     if count % 2 == 0:
+	        print line
+
+
+Q1(j)
+class QuizItem:
+	def __init__(self, question, answer):
+		self.question = question
+		self.answer = answer
+
+	def __str__(self):
+		return str(question) + ":" + str(answer)
+
+if __name__ == '__main__':
+   item = raw_input()
+   itemlist = item.split(":")
+   q = QuizItem(itemlist[0], itemlist[1])
+   print q
+
+
+
+
+
+
+
